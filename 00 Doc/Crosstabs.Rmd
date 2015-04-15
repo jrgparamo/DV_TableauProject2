@@ -11,16 +11,41 @@ When you click the **Knit** button a document will be generated that includes bo
 
 requir
 
-```{r}
+```{r,message=FALSE, echo=FALSE}
 require("jsonlite")
 require("RCurl")
 require("dplyr")
+require("knitr")
 ```
 
-You can also embed plots, for example:
+Crosstab for Nth Value:
 
-```{r, echo=FALSE}
-plot(cars)
+```{r,message=FALSE, warning=FALSE}
+source("../01 SQL Crosstabs/nth_value.R", echo=FALSE)
 ```
+
+Nth Value in R
+```{r}
+tbl_df(nth_value)
+```
+
+Nth Value in Tableau
+
+![](../nth.png) 
+
+Crosstab for Cumulative Distribution:
+
+```{r,message=FALSE, warning=FALSE}
+source("../01 SQL Crosstabs/cume_dist.R", echo=FALSE)
+```
+
+Cumulative Distribution in R
+```{r}
+head(cume_dist)
+```
+
+Cumulative Distribution
+
+![](../cume_dist.png) 
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

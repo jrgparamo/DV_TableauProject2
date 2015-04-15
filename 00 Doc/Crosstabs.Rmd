@@ -1,15 +1,16 @@
 ---
-title: "DV_TableauProject2"
+title: "DV_TableauProject2 - Crosstabs in Tableau and R using SQL"
 author: "Jorge Paramo, Aldo Carranza, Kevin Nievera"
-date: "April 14, 2015"
+date: "Spring 2015"
 output: html_document
 ---
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+> *Summary*: In this project, we show how to make crosstabs in Tableau and in RStudio using R with SQL queries. The data used for this assignment is from a previous project on Life Expectancy by country.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+* Data set can be found on the World Health Organization website
+    + Life Expectancy: http://apps.who.int/gho/data/view.main.680
 
-requir
+Required Packages: *jsonlite, RCurl, dplyr, knitr*
 
 ```{r,message=FALSE, echo=FALSE}
 require("jsonlite")
@@ -17,35 +18,41 @@ require("RCurl")
 require("dplyr")
 require("knitr")
 ```
+###Crosstab for Rank###
+####Rank in R####
+####Rank in Tableau####
+###Crosstab for Last_value/Max_value and Difference###
+####Last_value/Max_value and Difference in R####
+####Last_value/Max_value and Difference in Tableau####
 
-Crosstab for Nth Value:
+###Crosstab for Nth Value###
+> *Description*: In this crosstab, we tried to show the 2nd life expectancy for each year available in the data for each country.
 
 ```{r,message=FALSE, warning=FALSE}
 source("../01 SQL Crosstabs/nth_value.R", echo=FALSE)
 ```
 
-Nth Value in R
+####Nth Value in R####
 ```{r}
 tbl_df(nth_value)
 ```
 
-Nth Value in Tableau
+####Nth Value in Tableau####
 
 ![](../nth.png) 
 
-Crosstab for Cumulative Distribution:
+###Crosstab for Cumulative Distribution###
+> *Description*: This crosstab attempts to show the cumulative distribution of life expectancy for each country in each of the 6 World Health Organization Regions.
 
 ```{r,message=FALSE, warning=FALSE}
 source("../01 SQL Crosstabs/cume_dist.R", echo=FALSE)
 ```
 
-Cumulative Distribution in R
+####Cumulative Distribution in R####
 ```{r}
 head(cume_dist)
 ```
 
-Cumulative Distribution
+####Cumulative Distribution####
 
 ![](../cume_dist.png) 
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

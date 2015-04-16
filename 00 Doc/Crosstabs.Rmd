@@ -77,7 +77,7 @@ source("../01 SQL Crosstabs/cume_dist.R", echo=FALSE)
 
 ####Cumulative Distribution in R####
 ```{r}
-head(cume_dist)
+tbl_df(cume_dist)
 ```
 
 ####Cumulative Distribution####

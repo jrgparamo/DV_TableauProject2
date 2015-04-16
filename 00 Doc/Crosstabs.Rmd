@@ -38,6 +38,10 @@ tbl_df(rank)
 ###Crosstab for Last_value/Max_value and Difference###
 > *Description*: In this crosstab, we show World Bank income groups, the countries belonging in those groups, the countries' life expectancies in 2012, the maximum life expectancy along the pane, and the differences in life expectancy along the pane.
 
+```{r,message=FALSE, warning=FALSE}
+source("../01 SQL Crosstabs/max_difference.R", echo=FALSE)
+```
+
 ####Last_value/Max_value and Difference in R####
 
 ```{r}
@@ -80,4 +84,4 @@ head(cume_dist)
 
 ![](../cume_dist.png) 
 
-markdownToHTML('Crosstabs.Rmd', 'Crosstabs.html')
+

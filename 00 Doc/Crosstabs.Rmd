@@ -19,11 +19,34 @@ require("dplyr")
 require("knitr")
 ```
 ###Crosstab for Rank###
+> *Description*: In this crosstab, we show the countries, record year, and the rank of each year ordered by each country's respective life expectancy during the recorded years.
+
+```{r,message=FALSE, warning=FALSE}
+source("../01 SQL Crosstabs/rank.R", echo=FALSE)
+```
+
 ####Rank in R####
+
+```{r}
+tbl_df(rank)
+```
+
 ####Rank in Tableau####
+
+![](../rank.png) 
+
 ###Crosstab for Last_value/Max_value and Difference###
+> *Description*: In this crosstab, we show World Bank income groups, the countries belonging in those groups, the countries' life expectancies in 2012, the maximum life expectancy along the pane, and the differences in life expectancy along the pane.
+
 ####Last_value/Max_value and Difference in R####
+
+```{r}
+tbl_df(max_difference)
+```
+
 ####Last_value/Max_value and Difference in Tableau####
+
+![](../max_difference.png)
 
 ###Crosstab for Nth Value###
 > *Description*: In this crosstab, we tried to show the 2nd life expectancy for each year available in the data for each country.
@@ -56,3 +79,5 @@ head(cume_dist)
 ####Cumulative Distribution####
 
 ![](../cume_dist.png) 
+
+markdownToHTML('Crosstabs.Rmd', 'Crosstabs.html')
